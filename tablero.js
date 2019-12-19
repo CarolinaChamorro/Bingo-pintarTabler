@@ -15,31 +15,29 @@ function graficarTabla() {
         var casillero = document.createElement('div');
         casillero.className = 'celdas';
         casillero.id = a;
-         cont=casillero.id;
          
         for (var b = 0; b < numUsados.length; b++) {
             //REVISA ESTA CONDICION OJO
-            if (numUsados[numUsados.length - 1] === cont) {
-                console.log("encontrado " + casillero.id + "  y " + numUsados[b]);
+            cont=a;
+            if (numUsados[b] === cont) {
+                //se genera un mensaje en orden ascendente
+                //console.log("encontrado " + casillero.id + "  y " + numUsados[b]);
                 casillero.style.backgroundColor = "green";
-            }else{
-                console.log("no se ha encontrado numero");
             }
-
         }
         casillero.appendChild(document.createTextNode(a));
         contenedor.appendChild(casillero);
-        casillero.id++;
+        cont++;
     }
 }
 
 function jugar() {
     contenedor.innerHTML = "";
     var serie = generarNumero(0, 90);
-    if ((numUsados.includes(serie) || numUsados === []) && numUsados.length < 90) {
+    if ((numUsados.includes(serie) || numUsados === []) && numUsados.length < 91) {
         console.log("ya existe el numero : " + serie);
         jugar();
-    } else if (numUsados.length < 90) {
+    } else if (numUsados.length <91) {
         numUsados.push(serie);
         //numeros que se van a guardar
         console.log("numero guardado",numUsados[numUsados.length - 1]);
