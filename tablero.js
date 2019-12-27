@@ -1,4 +1,6 @@
 var contenedor = document.getElementById("contenedor");
+document.getElementById("mostrar").style.display="none";
+var verNum;
 var numTablero = [];
 var numUsados = [];// numeros jugados
 var cont=0;
@@ -6,8 +8,8 @@ graficarTabla();
 document.getElementById("bJugar").addEventListener("click", function () {
     jugar();
     graficarTabla();
+    mostrarNum();
 });
-
 function graficarTabla() {
     numTablero = [];
     for (var a = 1; a < 91; a++) {
@@ -38,13 +40,20 @@ function jugar() {
         console.log("ya existe el numero : " + serie);
         jugar();
     } else if (numUsados.length <91) {
+        verNum=serie;
         numUsados.push(serie);
         //numeros que se van a guardar
         console.log("numero guardado",numUsados[numUsados.length - 1]);
     } else {
+        var marco=document.getElementById("mostrar");
+        marco.style.backgroundColor = "pink";
         alert("Todos los numeros ya han sido jugados");
     }
+    document.getElementById("verNumero").innerHTML=verNum;
 }
 function generarNumero(min, max) {
     return Math.round(Math.random() * (max - min) + min);
+}
+function mostrarNum(){
+    document.getElementById("mostrar").style.display="block";
 }
