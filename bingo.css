@@ -12,3 +12,31 @@ text-align: center;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+#bJugar{
+  padding: 15px 14px;
+  margin-left: 10%;
+  background-color: coral;
+}
+.boton{
+  float: left;
+}
+#verNumero{
+  font-size: 4rem;
+  color: rgb(238, 105, 16);
+}
+.marco{
+  border-style: dashed;
+  border-width: 3px;
+  margin-left: 10%;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: darkblue;
+  padding-bottom: 5px;
+  float: left;
+}
+.numero{
+  color: crimson;
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
